@@ -24,7 +24,7 @@ DEMO: https://itsolgrp-test-production.up.railway.app/
 ## Project setup local
 
 ```shell
-git clone git@github.com:AslanAV/itsolgrp-test.git
+git clone https://github.com/AslanAV/itsolgrp-test.git
 cd itsolgrp-test
 make setup
 ```
