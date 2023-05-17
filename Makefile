@@ -56,3 +56,6 @@ compose-setup: compose-build
 
 rm-dockerfile-for-deploy:
 	rm Dockerfile
+
+compose-db-bash:
+	docker-compose exec db bash

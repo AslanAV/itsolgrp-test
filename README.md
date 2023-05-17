@@ -35,12 +35,37 @@ make setup
 make start
 ```
 
+___
 ## Project setup with docker
 
 ```shell
 git clone git@github.com:AslanAV/itsolgrp-test.git
 cd itsolgrp-test
-make compose-setup
+```
+
+Установить значения в .env
+```text
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=laraveluser
+DB_PASSWORD=db_password
+```
+
+```shell
+make compose-build
+make compose-db-bash
+```
+
+в контейнере `db` выполнить команды
+
+```shell
+mysql -u root -p
+GRANT ALL ON laravel.* TO 'laraveluser'@'%' IDENTIFIED BY 'db_password';
+FLUSH PRIVILEGES;
+EXIT;
+exit
 ```
 
 ## Project start with docker
