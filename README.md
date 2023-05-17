@@ -39,7 +39,7 @@ ___
 ## Project setup with docker
 
 ```shell
-git clone git@github.com:AslanAV/itsolgrp-test.git
+git clone https://github.com/AslanAV/itsolgrp-test.git
 cd itsolgrp-test
 ```
 
