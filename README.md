@@ -35,6 +35,11 @@ make setup
 make start
 ```
 
+## Доступ к сайту 
+```text
+http://0.0.0.0:8000/
+```
+
 ___
 ## Project setup with docker
 
@@ -55,6 +60,7 @@ DB_PASSWORD=db_password
 
 ```shell
 make compose-build
+make compose-start
 make compose-db-bash
 ```
 
@@ -62,14 +68,18 @@ make compose-db-bash
 
 ```shell
 mysql -u root -p
+password: root
 GRANT ALL ON laravel.* TO 'laraveluser'@'%' IDENTIFIED BY 'db_password';
 FLUSH PRIVILEGES;
 EXIT;
 exit
 ```
 
-## Project start with docker
-
 ```shell
-make compose-start
+make compose-setup
+```
+
+## Доступ к сайту
+```text
+http://0.0.0.0:80/
 ```

@@ -48,9 +48,9 @@ services:
             SERVICE_NAME: mysql
             MYSQL_ROOT_PASSWORD: 'root'
             MYSQL_ROOT_HOST: '%'
-            MYSQL_DATABASE: '${DB_DATABASE}'
-            MYSQL_USER: '${DB_USERNAME}'
-            MYSQL_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_DATABASE: '${DB_DATABASE:-laravel}'
+            MYSQL_USER: '${DB_USERNAME:-laraveluser}'
+            MYSQL_PASSWORD: '${DB_PASSWORD:-db_password}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
         volumes:
             - dbdata:/var/lib/mysql

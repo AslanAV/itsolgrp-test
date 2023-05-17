@@ -51,8 +51,8 @@ compose-start:
 compose-build:
 	docker-compose build
 
-compose-setup: compose-build
-	docker-compose run laravel.test make setup
+compose-setup:
+	docker-compose run app make setup
 
 rm-dockerfile-for-deploy:
 	rm Dockerfile
