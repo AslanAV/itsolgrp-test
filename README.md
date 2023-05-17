@@ -9,11 +9,10 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1074b5b2d00a262ca07f/test_coverage)](https://codeclimate.com/github/AslanAV/itsolgrp-test/test_coverage)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/997f413e4c3c9b1b3c5d/test_coverage)](https://codeclimate.com/github/AslanAV/php-project-57/test_coverage)
+[![Tests & Lint & Deploy to Railway](https://github.com/AslanAV/itsolgrp-test/actions/workflows/phpci.yaml/badge.svg)](https://github.com/AslanAV/itsolgrp-test/actions/workflows/phpci.yaml)
 
 
-
-https://php-project-57.up.railway.app/
+DEMO: https://itsolgrp-test-production.up.railway.app/
 
 ## Requirements:
 
@@ -25,8 +24,8 @@ https://php-project-57.up.railway.app/
 ## Project setup local
 
 ```shell
-git clone git@github.com:AslanAV/php-project-57.git
-cd php-project-57
+git clone git@github.com:AslanAV/itsolgrp-test.git
+cd itsolgrp-test
 make setup
 ```
 
@@ -36,10 +35,16 @@ make setup
 make start
 ```
 
-## Project setup and start docker
+## Project setup with docker
 
 ```shell
-git clone git@github.com:AslanAV/php-project-57.git
-cd php-project-57
-make docker-setup-start-detached
+git clone git@github.com:AslanAV/itsolgrp-test.git
+cd itsolgrp-test
+make compose-setup
+```
+
+## Project start with docker
+
+```shell
+make compose-start
 ```

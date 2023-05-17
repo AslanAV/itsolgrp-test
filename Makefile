@@ -1,5 +1,5 @@
 start:
-	php artisan serve --host 0.0.0.0
+	php artisan serve --host 0.0.0.0:8000
 
 start-frontend:
 	npm run dev
@@ -21,20 +21,11 @@ watch:
 migrate:
 	php artisan migrate
 
-console:
-	php artisan tinker
-
-log:
-	tail -f storage/logs/laravel.log
-
 test:
 	php artisan test
 
 test-coverage:
 	XDEBUG_MODE=coverage php artisan test --coverage-clover build/logs/clover.xml
-
-deploy:
-	git push heroku
 
 lint:
 	composer exec phpcs -- --standard=PSR12 app routes tests
@@ -54,14 +45,11 @@ sail-migrate-refresh-seed:
 sail-migrate-drop-database-fresh-seed:
 	./vendor/bin/sail artisan migrate:fresh --seed
 
-route-list:
-	php artisan route:list
+compose-start:
+	docker-compose up -d
 
-sail-ide-helper:
-	./vendor/bin/sail artisan ide-helper:eloquent
-	./vendor/bin/sail artisan ide-helper:gen
-	./vendor/bin/sail artisan ide-helper:meta
-	./vendor/bin/sail artisan ide-helper:mod -n
+compose-build:
+	docker-compose build
 
-docker-setup-start-detached:
-	./vendor/bin/sail up -d
+compose-setup: compose-build
+	docker-compose run laravel.test make setup
