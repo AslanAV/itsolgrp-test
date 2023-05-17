@@ -62,6 +62,9 @@ jobs:
       - name: Install Railway
         run: npm i -g @railway/cli
 
+      - name: delete Dockerfile for Deploy packages
+        run: make rm-dockerfile-for-deploy
+
       - name: Deploy
         run: railway up
         env:
