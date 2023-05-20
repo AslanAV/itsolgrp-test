@@ -22,12 +22,10 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $article->title }}</h5>
                                     <p class="card-text">{{ Str::limit(preg_replace('/<([^>]+)>/', PHP_EOL, $article->content), 300, "...") }}</p>
-                                    <a href="#"
-                                       class="badge rounded-pill text-bg-secondary">Likes {{ $article->likes }}</a>
-                                    <a href="#"
-                                       class="badge rounded-pill text-bg-secondary">Views {{ $article->views }}</a>
+                                    <p class="badge rounded-pill text-bg-secondary">Likes {{ $article->likes }}</p>
+                                    <p class="badge rounded-pill text-bg-secondary">Views {{ $article->views }}</p>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                        <a href="{{ route('article', $article->id) }}"
+                                        <a href="{{ route('article', $article) }}"
                                            class="btn btn-light ">Открыть</a>
                                     </div>
                                 </div>
