@@ -22,7 +22,7 @@
                        aria-current="page" href="{{ route('home') }}">На Главную</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @if(request()->routeIs('articles')) active @endif"
+                    <a class="nav-link @if(request()->routeIs('articles') || request()->routeIs('article')) active @endif"
                        aria-current="page" href="{{ route('articles') }}">Каталог Статей</a>
                 </li>
             </ul>
