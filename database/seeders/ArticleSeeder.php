@@ -17,8 +17,8 @@ class ArticleSeeder extends Seeder
     {
         Article::factory()
             ->count(30)
-            ->hasTags(2)
-            ->hasComments(2)
+            ->hasTags(3)
+            ->hasComments(4)
             ->create();
     }
 }

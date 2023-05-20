@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,6 +20,7 @@ class CommentFactory extends Factory
         return [
             'subject' => fake()->text(100),
             'body' => fake()->text(200),
+            'created_at' => Carbon::now()->subDays(random_int(0, 365)),
         ];
     }
 }

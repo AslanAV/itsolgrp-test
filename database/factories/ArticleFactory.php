@@ -13,7 +13,7 @@ class ArticleFactory extends Factory
     {
         return [
             'title' => fake()->text(100),
-            'content' => fake()->text(300),
+            'content' => fake()->text(2000),
             'likes' => fake()->randomNumber(3, false),
             'views' => fake()->randomNumber(3, false),
         ];
