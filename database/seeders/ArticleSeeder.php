@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Article;
+use App\Models\Comment;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -16,9 +17,9 @@ class ArticleSeeder extends Seeder
     public function run(): void
     {
         Article::factory()
-            ->count(30)
+            ->count(20)
             ->hasTags(3)
-            ->hasComments(4)
+            ->has(Comment::factory()->count(3))
             ->create();
     }
 }

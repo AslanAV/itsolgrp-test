@@ -24,6 +24,7 @@
                             </svg>
                         </button>
                     </form>
+                    @include('components.likes_script')
 
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -57,18 +58,19 @@
                         <h5 class="m-2">Оставить комментарий</h5>
 
                         <!-- HTML-форма, оформленная с помощью стилей Bootstrap -->
-                        <form method="post" action="#" autocomplete="off">
+                        <form method="post" autocomplete="off" id="comments-form" enctype="multipart/form-data" data-action="{{ route('api_comments_post') }}" action="{{ route('api_comments_post')}}">
+                            @csrf
                             <div class="form-group">
                                 <input name="subject" type="text" class="form-control my-3" id="subject"
-                                       placeholder="Тема сообщения">
+                                       placeholder="Тема сообщения" required="">
                             </div>
                             <div class="form-group">
                                 <textarea name="body" type="text" class="form-control my-3" id="body"
-                                          placeholder="Сообщение"></textarea>
+                                          placeholder="Сообщение" required=""></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Отправить</button>
+                            <button type="submit" class="btn btn-primary comment-btn-submit">Отправить</button>
                         </form>
-
+                        @include('components.comments_script')
                     </div>
                 </div>
             </div>
