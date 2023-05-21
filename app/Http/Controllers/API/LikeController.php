@@ -13,11 +13,11 @@ class LikeController extends Controller
 //        $validated = $request->validate([
 //            'article_id' => 'required|string|exists:App\Model\Article,id',
 //        ]);
+//        $bodyRequest = file_get_contents('php://input');
+//        $body = json_decode($bodyRequest, true, 512, JSON_THROW_ON_ERROR);
+//        $myparam=$_POST;
 
-        $article = Article::findOrFail($request->article_id);
-        $article->likes += 1;
-        $article->save();
-
-        return response()->json(['message' => 'success', 'likes' => $article->likes], 200);
+//        return response()->json(['message' => 'success', 'likes' => $article->likes], 200);
+        return response()->json($myparam, 200);
     }
 }

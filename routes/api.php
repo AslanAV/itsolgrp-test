@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/likes', [LikeController::class, 'store'])->name('api_likes');
-Route::post('/likes', [LikeController::class, 'store'])->name('api_likes');
+Route::get('/likes', [LikeController::class, 'store'])->name('api_likes_get');
+Route::post('/likes', [LikeController::class, 'store'])->name('api_likes_post');
