@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\LikeController;
 use App\Http\Controllers\API\ViewController;
 use Illuminate\Http\Request;
@@ -23,3 +24,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/likes', [LikeController::class, 'store'])->name('api_likes_post');
 Route::post('/views', [ViewController::class, 'store'])->name('api_views_post');
+Route::post('/comments', [CommentController::class, 'store'])->name('api_comments_post');
