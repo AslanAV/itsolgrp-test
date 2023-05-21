@@ -10,14 +10,14 @@ class LikeController extends Controller
 {
     public function store(Request $request)
     {
-//        $validated = $request->validate([
-//            'article_id' => 'required|string|exists:App\Model\Article,id',
-//        ]);
-//        $bodyRequest = file_get_contents('php://input');
-//        $body = json_decode($bodyRequest, true, 512, JSON_THROW_ON_ERROR);
-//        $myparam=$_POST;
+        $validated = $request->validate([
+            'article_id' => 'required|numeric|exists:App\Models\Article,id',
+        ]);
 
-//        return response()->json(['message' => 'success', 'likes' => $article->likes], 200);
-        return response()->json($myparam, 200);
+        $article = Article::find($validated['article_id']);
+        $article->increment('likes');
+        $article->save();
+
+        return response()->json(['message' => 'Реакция добавлена!', 'likes' => $article->likes], 200);
     }
 }
