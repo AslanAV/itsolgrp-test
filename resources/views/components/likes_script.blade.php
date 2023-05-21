@@ -16,6 +16,7 @@
             data:{article_id:{{ $article->id }}},
             success:function(data){
                 alert(data.message);
+                document.location.replace("{{ route('article', $article) }}");
             }
         });
 
