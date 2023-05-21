@@ -1,11 +1,10 @@
-@php use Carbon\Carbon; @endphp
 @extends('layouts.layout')
 @php
+    use Carbon\Carbon;
+    use \App\Helpers\SortLIFOHelper;
+
     /** @var \Illuminate\Support\Collection $article */
-    $comments = $article->comments->toArray();
-    usort($comments, function ($comment1, $comment2) {
-        return $comment1['created_at'] < $comment2['created_at'];
-    });
+    $comments = SortLIFOHelper::sort($article->comments->toArray());
 @endphp
 @section('content')
     <div class="album py-5 bg-light">

@@ -24,7 +24,9 @@
                                 <p class="badge rounded-pill text-bg-secondary">Likes {{ $article->likes }}</p>
                                 <p class="badge rounded-pill text-bg-secondary">Views {{ $article->views }}</p>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <a href="{{ route('article', $article) }}" class="btn btn-light ">Открыть</a>
+                                        <a href="{{ route('article', $article) }}"
+                                           class="btn btn-light view-btn-submit-{{ $article->id }}">Открыть</a>
+                                    @include('components.views_script')
                                 </div>
                             </div>
                         </div>
@@ -34,6 +36,4 @@
             </div>
         </div>
     </div>
-
-    {{--    {{ $articles->links('pagination::simple-bootstrap-5') }}--}}
 @endsection

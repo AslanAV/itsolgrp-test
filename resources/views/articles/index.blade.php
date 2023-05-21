@@ -26,7 +26,8 @@
                                     <p class="badge rounded-pill text-bg-secondary">Views {{ $article->views }}</p>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <a href="{{ route('article', $article) }}"
-                                           class="btn btn-light ">Открыть</a>
+                                           class="btn btn-light view-btn-submit-{{ $article->id }}">Открыть</a>
+                                        @include('components.views_script')
                                     </div>
                                 </div>
                             </div>
