@@ -48,7 +48,7 @@ git clone https://github.com/AslanAV/itsolgrp-test.git
 cd itsolgrp-test
 ```
 
-Установить значения в .env.example
+Установить значения в `.env.example`
 ```text
 DB_CONNECTION=mysql
 DB_HOST=db
