@@ -57,6 +57,13 @@ DB_DATABASE=laravel
 DB_USERNAME=laraveluser
 DB_PASSWORD=db_password
 ```
+Если запущен локальный `MySQL`, 
+требуется остановить службу для 
+корректной работы контейнера `db` на порту `3306`
+
+```shell
+sudo service mysql stop
+```
 
 ```shell
 make compose-build
@@ -77,6 +84,7 @@ exit
 
 ```shell
 make compose-setup
+make compose-restart
 ```
 
 ## Доступ к сайту

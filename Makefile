@@ -59,3 +59,7 @@ rm-dockerfile-for-deploy:
 
 compose-db-bash:
 	docker-compose exec db bash
+
+compose-restart:
+	docker-compose down
+	docker-compose up -d
